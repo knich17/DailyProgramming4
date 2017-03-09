@@ -1,0 +1,101 @@
+/**
+ * 
+ */
+package TheBestConjunction;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
+
+/**
+ * @author Kane
+ *
+ */
+public class TheBestConjunction {
+	static HashSet<String> wordList;
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		wordList = getWordList("wordlist.txt");
+		
+		//for every word in the word list
+		for(int i = 1; true; i++) {
+			int bestWords = 0;
+			String bestWord = "";
+			int minLength = i;
+			//loop through the word, starting and the minimum subword length and increasing until subword is base word kinda thing
+			for(String word : wordList) {
+//				String wordString = i + " - " + word + " - (";
+//				int position = 0;
+//				int currLength = minLength;
+//				int words = 0;
+//				while(currLength < word.length() && position+currLength <= word.length() && position < word.length()) {
+//					if (wordList.contains(word.substring(position, position+currLength))) {
+//						if (words == 0) {
+//							wordString += word.substring(position, position+currLength);
+//						} else {
+//							wordString += ", " + word.substring(position, position+currLength);
+//						}
+//						words++;
+//						position += currLength; 
+//						currLength = minLength;
+//					} else {
+//						currLength++;
+//					}
+//				}
+//				if(words > bestWords) {
+//					bestWords = words;
+//					bestWord = wordString + ") - numWords=" + words + "\n";
+//				}
+			}
+			if(bestWord == "") break;
+			System.out.print(bestWord);
+		}
+	}
+	
+//	public class Word {
+//		String word;
+//		int
+//	}
+	
+	public static String findSubword(String word, int minLength) {
+		//store subwords from this point
+		String[] strings = new String[word.length()];
+		//String subwords[word.length()-1]
+		for(int i = minLength; i < word.length()-1; i++) {
+			if(wordList.contains(word.substring(0, i))) {
+				//add subword to list if not null
+//				if(findSubword(word.substring(i, word.length()), minLength) == null) {
+//					
+//				}
+			}
+		}
+		//return best subword?
+		return null; //reached the end
+	}
+	
+	public static HashSet<String> getWordList(String fileName) {
+		HashSet<String> wordList = new HashSet<String>();
+		
+		//read and store word list
+		try(BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+		    String line = br.readLine();
+
+		    while (line != null) {
+		    	wordList.add(line.replace("\r\n",""));
+		        line = br.readLine();
+		    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return wordList;
+	}
+
+}
