@@ -1,0 +1,48 @@
+/**
+ * 
+ */
+package TheBestConjunction;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
+
+/**
+ * @author Kane
+ *
+ */
+public class TheBestConjunction {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		HashSet<String> wordList = new HashSet<String>();
+		
+		//read and store word list
+		try(BufferedReader br = new BufferedReader(new FileReader(".enable1.txt"))) {
+		    StringBuilder sb = new StringBuilder();
+		    String line = br.readLine();
+
+		    while (line != null) {
+		        sb.append(line);
+		        sb.append(System.lineSeparator());
+		        line = br.readLine();
+		    }
+		    
+		    String everything = sb.toString();
+		    System.out.println(everything);;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		//for every word in the word list
+			//loop through the word, starting and the minimum subword length and increasing until subword is base word kinda thing
+
+	}
+
+}

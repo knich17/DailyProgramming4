@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package TheBestConjunction;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.util.*;
+
+/**
+ * @author Kane
+ *
+ */
+public class TheBestConjunction {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		HashSet<String> wordList = new HashSet<String>();
+		
+		//read and store word list
+		try(FileInputStream inputStream = new FileInputStream("foo.txt")) {     
+		    String everything = IOUtils.toString(inputStream);
+		    // do something with everything string
+		}
+		
+		//for every word in the word list
+			//loop through the word, starting and the minimum subword length and increasing until subword is base word kinda thing
+
+	}
+
+}

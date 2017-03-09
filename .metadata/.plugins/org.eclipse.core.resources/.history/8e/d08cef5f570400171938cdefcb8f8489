@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package TheBestConjunction;
+
+import java.util.*;
+
+/**
+ * @author Kane
+ *
+ */
+public class TheBestConjunction {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		HashSet<String> wordList = new HashSet<String>();
+		
+		//read and store word list
+		
+		//for every word in the word list
+			//loop through the word, starting and the minimum subword length and increasing until subword is base word kinda thing
+
+	}
+
+}
